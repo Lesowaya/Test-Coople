@@ -1,0 +1,12 @@
+<ActionBar title="Login" class="action-bar">
+</ActionBar>
+
+<StackLayout orientation="vertical"marginTop="20%">
+    <Label class="h2" text="Login" marginLeft="40%"></Label>
+
+    <TextField hint="Email" keyboardType="email" [(ngModel)]="email" required (textChange)="updateFormValid()"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="Password" secure="true" [(ngModel)]="password" required (textChange)="updateFormValid()"></TextField>
+
+    <Button text="Sign in" class="btn btn-primary btn-active submit-button" [isEnabled]="isFormValid" [nsRouterLink]="['/items']"></Button>
+</StackLayout>

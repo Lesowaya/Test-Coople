@@ -1,0 +1,24 @@
+<ActionBar title="Registration" class="action-bar">
+</ActionBar>
+
+<StackLayout orientation="vertical"marginTop="10%">
+    <Label class="h2" text="Registration" marginLeft="30%"></Label>
+
+    <TextField hint="Name" [(ngModel)]="name" required (textChange)="updateFormValid()"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="Email" keyboardType="email" [(ngModel)]="email" required (textChange)="updateFormValid()"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+    <FilterSelect
+            [items]="genders"
+            allowSearch="false"
+            (change)="updateFormValid()"
+            hint="Please select your gender"
+            modal_title="Gender"
+            [selected]="gender"
+            primary_key="id">
+    </FilterSelect>
+    <TextField hint="Password" secure="true" [(ngModel)]="password" required (textChange)="updateFormValid()"></TextField>
+    <TextField hint="Password Confirm" secure="true" [(ngModel)]="passwordConfirm" required (textChange)="updateFormValid()"></TextField>
+
+    <Button text="Registrate" class="btn btn-primary btn-active submit-button" [isEnabled]="isFormValid" [nsRouterLink]="['/items']"></Button>
+</StackLayout>

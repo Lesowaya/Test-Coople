@@ -1,0 +1,17 @@
+<ActionBar title="Items List" class="action-bar">
+</ActionBar>
+
+<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <StackLayout orientation="vertical" class="m-15" [nsRouterLink]="['/item', item.id]">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" alignItems="stretch">
+                    <Label class="h3" [text]="item.title" horizontalAlignment="left"></Label>
+                    <Label class="h3" [text]="'$'+ item.price + ' p/h'" horizontalAlignment="right"></Label>
+                </FlexboxLayout>
+
+                <Label [text]="item.description"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

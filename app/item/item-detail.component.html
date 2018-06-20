@@ -1,0 +1,11 @@
+<ActionBar title="Item details" class="action-bar"></ActionBar>
+
+<StackLayout orientation="vertical" marginTop="20%">
+    <Label class="h2" text="Edit item information" marginLeft="20%"></Label>
+
+    <TextField hint="Title" [(ngModel)]="item.title" required autocapitalizationType="none"></TextField>
+    <TextField hint="Price" [(ngModel)]="item.price" required></TextField>
+    <TextField hint="Description" [(ngModel)]="item.description" required></TextField>
+
+    <Button text="Save item and return" class="btn btn-primary btn-active submit-button" (tap)="save()"></Button>
+</StackLayout>
